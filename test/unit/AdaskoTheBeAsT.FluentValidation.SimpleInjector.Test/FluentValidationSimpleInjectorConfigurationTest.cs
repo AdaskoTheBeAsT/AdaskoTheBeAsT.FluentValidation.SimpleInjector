@@ -106,7 +106,7 @@ namespace AdaskoTheBeAsT.FluentValidation.SimpleInjector.Test
 
             // Act
             var result = _sut.WithAssemblyMarkerTypes(
-                (IEnumerable<Type>)handlerAssemblyMarkerType);
+                handlerAssemblyMarkerType);
 
             // Assert
             // Assert

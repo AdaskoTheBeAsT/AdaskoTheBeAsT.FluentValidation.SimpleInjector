@@ -102,7 +102,7 @@ namespace AdaskoTheBeAsT.FluentValidation.SimpleInjector.Test
             _sut.AddFluentValidation(
                 config =>
                 {
-                    config.WithAssemblyMarkerTypes((IEnumerable<Type>)typeof(PersonValidator));
+                    config.WithAssemblyMarkerTypes(typeof(PersonValidator));
                 });
 
             // Act
@@ -126,7 +126,7 @@ namespace AdaskoTheBeAsT.FluentValidation.SimpleInjector.Test
             _sut.AddFluentValidation(
                 config =>
                 {
-                    config.WithAssemblyMarkerTypes((IEnumerable<Type>)typeof(PersonValidator));
+                    config.WithAssemblyMarkerTypes(typeof(PersonValidator));
                 });
 
             // Act
@@ -147,7 +147,7 @@ namespace AdaskoTheBeAsT.FluentValidation.SimpleInjector.Test
             _sut.AddFluentValidation(
                 config =>
                 {
-                    config.WithAssemblyMarkerTypes((IEnumerable<Type>)typeof(PersonValidator));
+                    config.WithAssemblyMarkerTypes(typeof(PersonValidator));
                     config.AsSingleton();
                 });
 
@@ -169,7 +169,7 @@ namespace AdaskoTheBeAsT.FluentValidation.SimpleInjector.Test
             _sut.AddFluentValidation(
                 config =>
                 {
-                    config.WithAssemblyMarkerTypes((IEnumerable<Type>)typeof(PersonValidator));
+                    config.WithAssemblyMarkerTypes(typeof(PersonValidator));
                     config.AsScoped();
                 });
 
@@ -191,7 +191,7 @@ namespace AdaskoTheBeAsT.FluentValidation.SimpleInjector.Test
             _sut.AddFluentValidation(
                 config =>
                 {
-                    config.WithAssemblyMarkerTypes((IEnumerable<Type>)typeof(PersonValidator));
+                    config.WithAssemblyMarkerTypes(typeof(PersonValidator));
                     config.AsTransient();
                 });
 

@@ -55,7 +55,7 @@ namespace AdaskoTheBeAsT.FluentValidation.SimpleInjector
         {
             return AddFluentValidation(
                 container,
-                config => config.WithAssemblyMarkerTypes((IEnumerable<Type>)handlerAssemblyMarkerTypes));
+                config => config.WithAssemblyMarkerTypes(handlerAssemblyMarkerTypes));
         }
 
         /// <summary>
