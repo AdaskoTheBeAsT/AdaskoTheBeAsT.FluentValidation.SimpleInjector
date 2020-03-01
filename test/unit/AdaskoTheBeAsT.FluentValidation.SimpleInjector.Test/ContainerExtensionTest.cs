@@ -11,7 +11,7 @@ using Xunit;
 
 namespace AdaskoTheBeAsT.FluentValidation.SimpleInjector.Test
 {
-    public sealed partial class ContainerExtensionTest
+    public sealed class ContainerExtensionTest
         : IDisposable
     {
         private readonly Container _sut;

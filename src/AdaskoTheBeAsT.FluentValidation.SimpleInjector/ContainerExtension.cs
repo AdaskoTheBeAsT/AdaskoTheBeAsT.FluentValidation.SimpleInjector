@@ -73,6 +73,7 @@ namespace AdaskoTheBeAsT.FluentValidation.SimpleInjector
                 config => config.WithHandlerAssemblyMarkerTypes(handlerAssemblyMarkerTypes));
         }
 
+#pragma warning disable 8632
         /// <summary>
         /// Registers types implementing <see cref="IValidator{T}"/> interface from the specified assemblies.
         /// </summary>
@@ -88,6 +89,7 @@ namespace AdaskoTheBeAsT.FluentValidation.SimpleInjector
 
             return SetupContainer(container, serviceConfig);
         }
+#pragma warning restore 8632
 
         internal static Container SetupContainer(
             this Container container,
