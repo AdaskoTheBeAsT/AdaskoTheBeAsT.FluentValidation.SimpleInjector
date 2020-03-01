@@ -1,0 +1,2 @@
+# AdaskoTheBeAsT.FluentValidation.SimpleInjector
+FluentValidation extensions to SimpleInjector
