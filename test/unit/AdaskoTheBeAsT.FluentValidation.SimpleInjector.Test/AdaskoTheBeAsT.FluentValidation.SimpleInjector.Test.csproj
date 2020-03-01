@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net461;netcoreapp3.1</TargetFrameworks>
+    <ProjectGuid>6DA682E1-CB1A-4E67-868D-E24BD01C4720</ProjectGuid>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\AdditionalTestSettings.cs" Link="AdditionalTestSettings.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\AdaskoTheBeAsT.FluentValidation.SimpleInjector\AdaskoTheBeAsT.FluentValidation.SimpleInjector.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="xunit.runner.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

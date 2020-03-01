@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".props", ".props", "{642CC215-0D1B-4627-9F05-EC563DAEB214}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		AdaskoTheBeAsT.FluentValidation.SimpleInjector.sln.DotSettings = AdaskoTheBeAsT.FluentValidation.SimpleInjector.sln.DotSettings
+		AdaskoTheBeAsT.ruleset = AdaskoTheBeAsT.ruleset
+		azure-pipelines.yml = azure-pipelines.yml
+		Directory.Build.props = Directory.Build.props
+		global.json = global.json
+		LICENSE = LICENSE
+		README.md = README.md
+		SecurityCodeScan.config.yml = SecurityCodeScan.config.yml
+		Settings.StyleCop = Settings.StyleCop
+		stylecop.json = stylecop.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4E428AEE-79FD-4765-B9CF-0FCD68838F3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdaskoTheBeAsT.FluentValidation.SimpleInjector", "src\AdaskoTheBeAsT.FluentValidation.SimpleInjector\AdaskoTheBeAsT.FluentValidation.SimpleInjector.csproj", "{E2EE84CB-4AAA-424C-A8FB-B5904D45AC06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdaskoTheBeAsT.FluentValidation.SimpleInjector.Test", "test\unit\AdaskoTheBeAsT.FluentValidation.SimpleInjector.Test\AdaskoTheBeAsT.FluentValidation.SimpleInjector.Test.csproj", "{98DDBBBC-E56D-40AF-8717-1357694F4561}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{164B4A4B-2D45-4404-AEA4-84DED4C08D44}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "unit", "unit", "{41838046-8FDE-4687-99FB-202C793EB02F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".props", ".props", "{E9F9C3ED-113B-44F9-AF95-F4E1F490044E}"
+	ProjectSection(SolutionItems) = preProject
+		test\Directory.Build.props = test\Directory.Build.props
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E2EE84CB-4AAA-424C-A8FB-B5904D45AC06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2EE84CB-4AAA-424C-A8FB-B5904D45AC06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2EE84CB-4AAA-424C-A8FB-B5904D45AC06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2EE84CB-4AAA-424C-A8FB-B5904D45AC06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98DDBBBC-E56D-40AF-8717-1357694F4561}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98DDBBBC-E56D-40AF-8717-1357694F4561}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98DDBBBC-E56D-40AF-8717-1357694F4561}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98DDBBBC-E56D-40AF-8717-1357694F4561}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E2EE84CB-4AAA-424C-A8FB-B5904D45AC06} = {4E428AEE-79FD-4765-B9CF-0FCD68838F3E}
+		{98DDBBBC-E56D-40AF-8717-1357694F4561} = {41838046-8FDE-4687-99FB-202C793EB02F}
+		{41838046-8FDE-4687-99FB-202C793EB02F} = {164B4A4B-2D45-4404-AEA4-84DED4C08D44}
+		{E9F9C3ED-113B-44F9-AF95-F4E1F490044E} = {164B4A4B-2D45-4404-AEA4-84DED4C08D44}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {80B83EDC-2959-4200-A509-DA02FC0935DE}
+	EndGlobalSection
+EndGlobal
