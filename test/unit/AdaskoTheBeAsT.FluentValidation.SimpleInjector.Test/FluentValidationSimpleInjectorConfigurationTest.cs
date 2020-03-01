@@ -105,8 +105,8 @@ namespace AdaskoTheBeAsT.FluentValidation.SimpleInjector.Test
             var handlerAssemblyMarkerType = typeof(FluentValidationSimpleInjectorConfigurationTest);
 
             // Act
-            var result = _sut.WithHandlerAssemblyMarkerTypes(
-                handlerAssemblyMarkerType);
+            var result = _sut.WithAssemblyMarkerTypes(
+                (IEnumerable<Type>)handlerAssemblyMarkerType);
 
             // Assert
             // Assert
@@ -124,7 +124,7 @@ namespace AdaskoTheBeAsT.FluentValidation.SimpleInjector.Test
             var handlerAssemblyMarkerType = typeof(FluentValidationSimpleInjectorConfigurationTest);
 
             // Act
-            var result = _sut.WithHandlerAssemblyMarkerTypes(
+            var result = _sut.WithAssemblyMarkerTypes(
                 new List<Type> { handlerAssemblyMarkerType });
 
             // Assert

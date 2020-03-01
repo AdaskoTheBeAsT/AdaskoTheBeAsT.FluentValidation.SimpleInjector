@@ -103,7 +103,7 @@ namespace AdaskoTheBeAsT.FluentValidation.SimpleInjector
         /// auto registering types.</param>
         /// <returns><see cref="FluentValidationSimpleInjectorConfiguration"/>
         /// with assemblies to scan configured.</returns>
-        public FluentValidationSimpleInjectorConfiguration WithHandlerAssemblyMarkerTypes(params Type[] handlerAssemblyMarkerTypes)
+        public FluentValidationSimpleInjectorConfiguration WithAssemblyMarkerTypes(params Type[] handlerAssemblyMarkerTypes)
         {
             AssembliesToScan = handlerAssemblyMarkerTypes.Select(t => t.GetTypeInfo().Assembly);
             return this;
@@ -118,7 +118,7 @@ namespace AdaskoTheBeAsT.FluentValidation.SimpleInjector
         /// auto registering types.</param>
         /// <returns><see cref="FluentValidationSimpleInjectorConfiguration"/>
         /// with assemblies to scan configured.</returns>
-        public FluentValidationSimpleInjectorConfiguration WithHandlerAssemblyMarkerTypes(IEnumerable<Type> handlerAssemblyMarkerTypes)
+        public FluentValidationSimpleInjectorConfiguration WithAssemblyMarkerTypes(IEnumerable<Type> handlerAssemblyMarkerTypes)
         {
             AssembliesToScan = handlerAssemblyMarkerTypes.Select(t => t.GetTypeInfo().Assembly);
             return this;

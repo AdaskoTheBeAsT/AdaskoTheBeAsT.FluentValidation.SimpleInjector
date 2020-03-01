@@ -55,7 +55,7 @@ namespace AdaskoTheBeAsT.FluentValidation.SimpleInjector
         {
             return AddFluentValidation(
                 container,
-                config => config.WithHandlerAssemblyMarkerTypes(handlerAssemblyMarkerTypes));
+                config => config.WithAssemblyMarkerTypes((IEnumerable<Type>)handlerAssemblyMarkerTypes));
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace AdaskoTheBeAsT.FluentValidation.SimpleInjector
         {
             return AddFluentValidation(
                 container,
-                config => config.WithHandlerAssemblyMarkerTypes(handlerAssemblyMarkerTypes));
+                config => config.WithAssemblyMarkerTypes(handlerAssemblyMarkerTypes));
         }
 
 #pragma warning disable 8632
