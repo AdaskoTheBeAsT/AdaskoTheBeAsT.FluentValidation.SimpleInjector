@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using FluentAssertions;
 using FluentAssertions.Execution;
 using FluentValidation;
 using SimpleInjector;
+using SimpleInjector.Lifestyles;
 using Xunit;
 
 namespace AdaskoTheBeAsT.FluentValidation.SimpleInjector.Test
@@ -17,6 +19,7 @@ namespace AdaskoTheBeAsT.FluentValidation.SimpleInjector.Test
         public ContainerExtensionTest()
         {
             _sut = new Container();
+            _sut.Options.DefaultScopedLifestyle = new AsyncScopedLifestyle();
         }
 
         public void Dispose()
@@ -113,6 +116,93 @@ namespace AdaskoTheBeAsT.FluentValidation.SimpleInjector.Test
                 result.Should().BeOfType<PersonValidator>();
                 result2.Should().NotBeNull();
                 result2.Should().BeOfType<NullValidator<Car>>();
+            }
+        }
+
+        [Fact]
+        public void ShouldBeRegisteredAsSingletonWhenDefaultLifetime()
+        {
+            // Arrange
+            _sut.AddFluentValidation(
+                config =>
+                {
+                    config.WithHandlerAssemblyMarkerTypes(typeof(PersonValidator));
+                });
+
+            // Act
+            var serviceDescriptors = _sut.GetCurrentRegistrations()
+                .Where(r => r.ServiceType == typeof(IValidator<>));
+
+            // Assert
+            using (new AssertionScope())
+            {
+                serviceDescriptors.Select(sd => sd.Lifestyle).Should().AllBeEquivalentTo(Lifestyle.Singleton);
+            }
+        }
+
+        [Fact]
+        public void ShouldBeRegisteredAsSingletonWhenSingletonLifetime()
+        {
+            // Arrange
+            _sut.AddFluentValidation(
+                config =>
+                {
+                    config.WithHandlerAssemblyMarkerTypes(typeof(PersonValidator));
+                    config.AsSingleton();
+                });
+
+            // Act
+            var serviceDescriptors = _sut.GetCurrentRegistrations()
+                .Where(r => r.ServiceType == typeof(IValidator<>));
+
+            // Assert
+            using (new AssertionScope())
+            {
+                serviceDescriptors.Select(sd => sd.Lifestyle).Should().AllBeEquivalentTo(Lifestyle.Singleton);
+            }
+        }
+
+        [Fact]
+        public void ShouldBeRegisteredAsScopedWhenScopedLifetime()
+        {
+            // Arrange
+            _sut.AddFluentValidation(
+                config =>
+                {
+                    config.WithHandlerAssemblyMarkerTypes(typeof(PersonValidator));
+                    config.AsScoped();
+                });
+
+            // Act
+            var serviceDescriptors = _sut.GetCurrentRegistrations()
+                .Where(r => r.ServiceType == typeof(IValidator<>));
+
+            // Assert
+            using (new AssertionScope())
+            {
+                serviceDescriptors.Select(sd => sd.Lifestyle).Should().AllBeEquivalentTo(Lifestyle.Scoped);
+            }
+        }
+
+        [Fact]
+        public void ShouldBeRegisteredAsTransientWhenTransientLifetime()
+        {
+            // Arrange
+            _sut.AddFluentValidation(
+                config =>
+                {
+                    config.WithHandlerAssemblyMarkerTypes(typeof(PersonValidator));
+                    config.AsTransient();
+                });
+
+            // Act
+            var serviceDescriptors = _sut.GetCurrentRegistrations()
+                .Where(r => r.ServiceType == typeof(IValidator<>));
+
+            // Assert
+            using (new AssertionScope())
+            {
+                serviceDescriptors.Select(sd => sd.Lifestyle).Should().AllBeEquivalentTo(Lifestyle.Transient);
             }
         }
     }
