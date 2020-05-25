@@ -100,10 +100,7 @@ namespace AdaskoTheBeAsT.FluentValidation.SimpleInjector.Test
         {
             // Arrange
             _sut.AddFluentValidation(
-                config =>
-                {
-                    config.WithAssemblyMarkerTypes(typeof(PersonValidator));
-                });
+                config => config.WithAssemblyMarkerTypes(typeof(PersonValidator)));
 
             // Act
             var result = _sut.GetInstance<IValidator<Person>>();
@@ -124,10 +121,7 @@ namespace AdaskoTheBeAsT.FluentValidation.SimpleInjector.Test
         {
             // Arrange
             _sut.AddFluentValidation(
-                config =>
-                {
-                    config.WithAssemblyMarkerTypes(typeof(PersonValidator));
-                });
+                config => config.WithAssemblyMarkerTypes(typeof(PersonValidator)));
 
             // Act
             var serviceDescriptors = _sut.GetCurrentRegistrations()
