@@ -10,22 +10,22 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".props", ".props", "{642CC2
 		AdaskoTheBeAsT.FluentValidation.SimpleInjector.sln.DotSettings = AdaskoTheBeAsT.FluentValidation.SimpleInjector.sln.DotSettings
 		AdaskoTheBeAsT.ruleset = AdaskoTheBeAsT.ruleset
 		azure-pipelines.yml = azure-pipelines.yml
+		DeterministicBuild.targets = DeterministicBuild.targets
 		Directory.Build.props = Directory.Build.props
+		Directory.Build.targets = Directory.Build.targets
 		global.json = global.json
 		LICENSE = LICENSE
 		README.md = README.md
 		SecurityCodeScan.config.yml = SecurityCodeScan.config.yml
 		Settings.StyleCop = Settings.StyleCop
 		stylecop.json = stylecop.json
-		DeterministicBuild.targets = DeterministicBuild.targets
-		Directory.Build.targets = Directory.Build.targets
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4E428AEE-79FD-4765-B9CF-0FCD68838F3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdaskoTheBeAsT.FluentValidation.SimpleInjector", "src\AdaskoTheBeAsT.FluentValidation.SimpleInjector\AdaskoTheBeAsT.FluentValidation.SimpleInjector.csproj", "{E2EE84CB-4AAA-424C-A8FB-B5904D45AC06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdaskoTheBeAsT.FluentValidation.SimpleInjector", "src\AdaskoTheBeAsT.FluentValidation.SimpleInjector\AdaskoTheBeAsT.FluentValidation.SimpleInjector.csproj", "{E2EE84CB-4AAA-424C-A8FB-B5904D45AC06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdaskoTheBeAsT.FluentValidation.SimpleInjector.Test", "test\unit\AdaskoTheBeAsT.FluentValidation.SimpleInjector.Test\AdaskoTheBeAsT.FluentValidation.SimpleInjector.Test.csproj", "{98DDBBBC-E56D-40AF-8717-1357694F4561}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdaskoTheBeAsT.FluentValidation.SimpleInjector.Test", "test\unit\AdaskoTheBeAsT.FluentValidation.SimpleInjector.Test\AdaskoTheBeAsT.FluentValidation.SimpleInjector.Test.csproj", "{98DDBBBC-E56D-40AF-8717-1357694F4561}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{164B4A4B-2D45-4404-AEA4-84DED4C08D44}"
 EndProject
