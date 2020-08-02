@@ -44,19 +44,25 @@
     <PackageReference Include="Asyncify" Version="0.9.7" >
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+	<PackageReference Include="codecracker.CSharp" Version="1.1.0">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
     <PackageReference Include="HSR.ParallelChecker" Version="1.6.0" >
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="IDisposableAnalyzers" Version="3.4.1" >
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Meziantou.Analyzer" Version="1.0.452" >
+    <PackageReference Include="Meziantou.Analyzer" Version="1.0.474" >
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.0.0" >
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.0.0" >
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+	<PackageReference Include="Microsoft.DotNet.Analyzers.Compatibility" Version="0.1.2-alpha">
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Roslynator.Analyzers" Version="2.3.0" >
@@ -71,7 +77,7 @@
     <PackageReference Include="SonarAnalyzer.CSharp" Version="8.10.0.19839" >
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.164" >
+    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.205" >
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
 
