@@ -84,6 +84,11 @@ namespace AdaskoTheBeAsT.FluentValidation.SimpleInjector
             this Container container,
             Action<FluentValidationSimpleInjectorConfiguration>? configuration)
         {
+            if (container is null)
+            {
+                throw new ArgumentNullException(nameof(container));
+            }
+
             var serviceConfig = new FluentValidationSimpleInjectorConfiguration();
             configuration?.Invoke(serviceConfig);
 
