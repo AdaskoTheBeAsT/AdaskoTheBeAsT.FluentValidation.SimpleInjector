@@ -46,7 +46,7 @@ steps:
   displayName: 'Prepare analysis on SonarCloud'
   inputs:
     scannerMode: 'MSBuild'    
-    SonarCloud: 'AdaskoTheBeAsT.FluentValidation.SimpleInjector.SonarCloud'
+    SonarCloud: 'Sonar.AdaskoTheBeAsT.FluentValidation.SimpleInjector'
     organization: 'adaskothebeast-github'
     projectKey: 'AdaskoTheBeAsT_AdaskoTheBeAsT.FluentValidation.SimpleInjector'
     projectName: AdaskoTheBeAsT.FluentValidation.SimpleInjector
