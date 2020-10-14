@@ -13,6 +13,7 @@ FluentValidation extensions to SimpleInjector
 ![Sonar Test Execution Time](https://img.shields.io/sonar/test_execution_time/AdaskoTheBeAsT_AdaskoTheBeAsT.FluentValidation.SimpleInjector?server=https%3A%2F%2Fsonarcloud.io)
 ![Sonar Coverage](https://img.shields.io/sonar/coverage/AdaskoTheBeAsT_AdaskoTheBeAsT.FluentValidation.SimpleInjector?server=https%3A%2F%2Fsonarcloud.io&style=plastic)
 ![Nuget](https://img.shields.io/nuget/dt/AdaskoTheBeAsT.FluentValidation.SimpleInjector)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FAdaskoTheBeAsT%2FAdaskoTheBeAsT.FluentValidation.SimpleInjector.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FAdaskoTheBeAsT%2FAdaskoTheBeAsT.FluentValidation.SimpleInjector?ref=badge_shield)
 
 ## Usage
 
@@ -64,3 +65,6 @@ There are few options to use with `Container` instance:
             cfg.AsScoped();
         });
    ```  
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FAdaskoTheBeAsT%2FAdaskoTheBeAsT.FluentValidation.SimpleInjector.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FAdaskoTheBeAsT%2FAdaskoTheBeAsT.FluentValidation.SimpleInjector?ref=badge_large)
