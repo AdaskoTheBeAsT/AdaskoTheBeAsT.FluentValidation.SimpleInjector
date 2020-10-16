@@ -102,11 +102,39 @@ namespace AdaskoTheBeAsT.FluentValidation.SimpleInjector
         {
             var uniqueAssemblies = serviceConfig.AssembliesToScan.Distinct().ToArray();
 
-            container.Register(typeof(IValidator<>), uniqueAssemblies, serviceConfig.Lifestyle);
+            var typesToRegister = container.GetTypesToRegister(typeof(IValidator<>), uniqueAssemblies);
+            var nonSkippedTypes = typesToRegister.Where(
+                type =>
+                    type.GetCustomAttribute<SkipValidatorRegistrationAttribute>() is null);
+
+            if (serviceConfig.ValidatorRegistrationKind == ValidatorRegistrationKind.SingleValidator)
+            {
+                return RegisterAsSingleValidator(container, serviceConfig, nonSkippedTypes);
+            }
+
+            return RegisterAsValidatorCollection(container, serviceConfig, nonSkippedTypes);
+        }
+
+        internal static Container RegisterAsSingleValidator(
+            this Container container,
+            FluentValidationSimpleInjectorConfiguration serviceConfig,
+            IEnumerable<Type> nonSkippedTypes)
+        {
+            container.Register(typeof(IValidator<>), nonSkippedTypes, serviceConfig.Lifestyle);
             container.RegisterConditional(
                 typeof(IValidator<>),
                 typeof(NullValidator<>),
                 c => !c.Handled);
+
+            return container;
+        }
+
+        internal static Container RegisterAsValidatorCollection(
+            this Container container,
+            FluentValidationSimpleInjectorConfiguration serviceConfig,
+            IEnumerable<Type> nonSkippedTypes)
+        {
+            container.Collection.Register(typeof(IValidator<>), nonSkippedTypes, serviceConfig.Lifestyle);
 
             return container;
         }

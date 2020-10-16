@@ -16,6 +16,7 @@ namespace AdaskoTheBeAsT.FluentValidation.SimpleInjector
         {
             Lifestyle = Lifestyle.Singleton;
             AssembliesToScan = Enumerable.Empty<Assembly>();
+            ValidatorRegistrationKind = ValidatorRegistrationKind.SingleValidator;
         }
 
         /// <summary>
@@ -29,6 +30,18 @@ namespace AdaskoTheBeAsT.FluentValidation.SimpleInjector
         /// auto registering types implementing <see cref="IValidator{T}"/> interface.
         /// </summary>
         public IEnumerable<Assembly> AssembliesToScan { get; private set; }
+
+        /// <summary>
+        /// Register validators kind.
+        /// AsSingle - open generic registered as single type
+        /// - one implementation of validator for given entity allowed.
+        /// Combining validation rules needs to be done by including rules as described on
+        /// https://docs.fluentvalidation.net/en/latest/including-rules.html.
+        /// Then for other composite parts special attribute can be used <see cref="SkipValidatorRegistrationAttribute"/>
+        /// to skip registration of part of the composite.
+        /// AsCollection - open generic registered as collection - multiple validators per same type allowed.
+        /// </summary>
+        public ValidatorRegistrationKind ValidatorRegistrationKind { get; private set; }
 
         /// <summary>
         /// Set lifestyle of
@@ -121,6 +134,33 @@ namespace AdaskoTheBeAsT.FluentValidation.SimpleInjector
         public FluentValidationSimpleInjectorConfiguration WithAssemblyMarkerTypes(IEnumerable<Type> handlerAssemblyMarkerTypes)
         {
             AssembliesToScan = handlerAssemblyMarkerTypes.Select(t => t.GetTypeInfo().Assembly);
+            return this;
+        }
+
+        /// <summary>
+        /// Set registration as single validator per given target type.
+        /// One implementation of validator for given entity allowed.
+        /// Combining validation rules needs to be done by including rules as described on
+        /// https://docs.fluentvalidation.net/en/latest/including-rules.html.
+        /// Then for other composite parts special attribute can be used <see cref="SkipValidatorRegistrationAttribute"/>
+        /// to skip registration of part of the composite.
+        /// </summary>
+        /// <returns><see cref="FluentValidationSimpleInjectorConfiguration"/>
+        /// with single validator per given target type.</returns>
+        public FluentValidationSimpleInjectorConfiguration RegisterAsSingleValidator()
+        {
+            this.ValidatorRegistrationKind = ValidatorRegistrationKind.SingleValidator;
+            return this;
+        }
+
+        /// <summary>
+        /// Set registration as validator collection per given target type.
+        /// </summary>
+        /// <returns><see cref="FluentValidationSimpleInjectorConfiguration"/>
+        /// with single validator per given target type.</returns>
+        public FluentValidationSimpleInjectorConfiguration RegisterAsValidatorCollection()
+        {
+            this.ValidatorRegistrationKind = ValidatorRegistrationKind.ValidatorCollection;
             return this;
         }
     }

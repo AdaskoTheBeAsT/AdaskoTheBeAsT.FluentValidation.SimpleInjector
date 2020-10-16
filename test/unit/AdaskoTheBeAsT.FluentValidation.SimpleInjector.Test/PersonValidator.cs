@@ -8,7 +8,7 @@ namespace AdaskoTheBeAsT.FluentValidation.SimpleInjector.Test
     {
         public PersonValidator()
         {
-            RuleFor(p => p.Id > 0);
+            Include(new SkippedPersonValidator());
             RuleFor(p => !string.IsNullOrEmpty(p.Name));
         }
     }

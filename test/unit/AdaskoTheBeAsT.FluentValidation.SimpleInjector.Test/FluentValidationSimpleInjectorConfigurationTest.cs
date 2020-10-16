@@ -135,5 +135,25 @@ namespace AdaskoTheBeAsT.FluentValidation.SimpleInjector.Test
                 result.AssembliesToScan.First().Should().BeSameAs(handlerAssemblyMarkerType.GetTypeInfo().Assembly);
             }
         }
+
+        [Fact]
+        public void RegisterAsSingleValidatorShouldSetSingleValidator()
+        {
+            // Act
+            var result = _sut.RegisterAsSingleValidator();
+
+            // Assert
+            result.ValidatorRegistrationKind.Should().Be(ValidatorRegistrationKind.SingleValidator);
+        }
+
+        [Fact]
+        public void RegisterAsValidatorCollectionShouldSetValidatorCollection()
+        {
+            // Act
+            var result = _sut.RegisterAsValidatorCollection();
+
+            // Assert
+            result.ValidatorRegistrationKind.Should().Be(ValidatorRegistrationKind.ValidatorCollection);
+        }
     }
 }

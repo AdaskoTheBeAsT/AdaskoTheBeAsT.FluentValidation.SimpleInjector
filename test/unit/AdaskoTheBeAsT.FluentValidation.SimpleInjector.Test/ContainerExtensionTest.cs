@@ -212,5 +212,54 @@ namespace AdaskoTheBeAsT.FluentValidation.SimpleInjector.Test
                 serviceDescriptors.Select(sd => sd.Lifestyle).Should().AllBeEquivalentTo(Lifestyle.Transient);
             }
         }
+
+        [Fact]
+        public void ShouldBeRegisteredAsSingleValidator()
+        {
+            // Arrange
+            _sut.AddFluentValidation(
+                config =>
+                {
+                    config.WithAssemblyMarkerTypes(typeof(PersonValidator));
+                    config.RegisterAsSingleValidator();
+                });
+
+            // Act
+            var result = _sut.GetInstance<IValidator<Person>>();
+            var result2 = _sut.GetInstance<IValidator<Car>>();
+
+            // Assert
+            using (new AssertionScope())
+            {
+                result.Should().NotBeNull();
+                result.Should().BeOfType<PersonValidator>();
+                result2.Should().NotBeNull();
+                result2.Should().BeOfType<NullValidator<Car>>();
+            }
+        }
+
+        [Fact]
+        public void ShouldBeRegisteredAValidatorCollection()
+        {
+            // Arrange
+            _sut.AddFluentValidation(
+                config =>
+                {
+                    config.WithAssemblyMarkerTypes(typeof(PersonValidator));
+                    config.RegisterAsValidatorCollection();
+                });
+
+            // Act
+            var result = _sut.GetAllInstances<IValidator<Person>>();
+            var result2 = _sut.GetAllInstances<IValidator<Car>>();
+
+            // Assert
+            using (new AssertionScope())
+            {
+                result.Should().HaveCount(1);
+                result.First().Should().BeOfType<PersonValidator>();
+                result2.Should().HaveCount(0);
+            }
+        }
     }
 }
