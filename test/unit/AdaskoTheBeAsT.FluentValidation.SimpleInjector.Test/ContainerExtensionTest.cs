@@ -250,14 +250,14 @@ namespace AdaskoTheBeAsT.FluentValidation.SimpleInjector.Test
                 });
 
             // Act
-            var result = _sut.GetAllInstances<IValidator<Person>>();
+            var result = _sut.GetAllInstances<IValidator<Person>>().ToList();
             var result2 = _sut.GetAllInstances<IValidator<Car>>();
 
             // Assert
             using (new AssertionScope())
             {
                 result.Should().HaveCount(1);
-                result.First().Should().BeOfType<PersonValidator>();
+                result[0].Should().BeOfType<PersonValidator>();
                 result2.Should().HaveCount(0);
             }
         }
