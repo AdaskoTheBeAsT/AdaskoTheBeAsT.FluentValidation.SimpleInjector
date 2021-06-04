@@ -41,7 +41,7 @@ namespace AdaskoTheBeAsT.FluentValidation.SimpleInjector.Test
         }
 
         [Fact]
-        public async Task ValidateAsyncShouldReturnTrueWhenNullPassed()
+        public async Task ValidateAsyncShouldReturnTrueWhenNullPassedAsync()
         {
             // Arrange
             var context = new ValidationContext<Person?>(instanceToValidate: null);
@@ -54,7 +54,7 @@ namespace AdaskoTheBeAsT.FluentValidation.SimpleInjector.Test
         }
 
         [Fact]
-        public async Task ValidateAsyncShouldReturnTrueWhenDefaultPassed()
+        public async Task ValidateAsyncShouldReturnTrueWhenDefaultPassedAsync()
         {
             // Arrange
             var context = new ValidationContext<Person?>(new Person());
