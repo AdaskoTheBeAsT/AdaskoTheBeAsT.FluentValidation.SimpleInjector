@@ -4,6 +4,7 @@ FluentValidation extensions to SimpleInjector
 
 ## Badges
 
+[![CodeFactor](https://www.codefactor.io/repository/github/adaskothebeast/adaskothebeast.fluentvalidation.simpleinjector/badge)](https://www.codefactor.io/repository/github/adaskothebeast/adaskothebeast.fluentvalidation.simpleinjector)
 [![Build Status](https://adaskothebeast.visualstudio.com/AdaskoTheBeAsT.FluentValidation.SimpleInjector/_apis/build/status/AdaskoTheBeAsT.AdaskoTheBeAsT.FluentValidation.SimpleInjector?branchName=master)](https://adaskothebeast.visualstudio.com/AdaskoTheBeAsT.FluentValidation.SimpleInjector/_build/latest?definitionId=9&branchName=master)
 ![Azure DevOps tests](https://img.shields.io/azure-devops/tests/AdaskoTheBeAsT/AdaskoTheBeAsT.FluentValidation.SimpleInjector/14)
 ![Azure DevOps coverage](https://img.shields.io/azure-devops/coverage/AdaskoTheBeAsT/AdaskoTheBeAsT.FluentValidation.SimpleInjector/14?style=plastic)

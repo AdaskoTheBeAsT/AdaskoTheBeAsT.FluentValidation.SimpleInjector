@@ -79,8 +79,8 @@ steps:
   displayName: 'Clear test results'
   inputs:
     SourceFolder: '$(testResultsDirectory)'
-    Contents: '**/*'  
-  
+    Contents: '**/*'
+
 - task: DotNetCoreCLI@2
   displayName: Test
   inputs:
@@ -94,7 +94,7 @@ steps:
     solutionOrProjectPath: 'AdaskoTheBeAsT.FluentValidation.SimpleInjector.sln'
     failBuildLevelSelector: 'Warning'
     resultsOutputFilePath: '$(Build.SourcesDirectory)/CodeQualityResults.xml'
-  
+
 - task: SonarCloudAnalyze@1
   displayName: Sonar Cloud analyze
 
