@@ -35,7 +35,9 @@ namespace AdaskoTheBeAsT.FluentValidation.SimpleInjector.Test
 #pragma warning disable CS8604 // Possible null reference argument.
 
             // ReSharper disable once InvokeAsExtensionMethod
+#pragma warning disable CC0026 // Call Extension Method As Extension
             Action action = () => ContainerExtension.AddFluentValidation(container!, _ => { });
+#pragma warning restore CC0026 // Call Extension Method As Extension
 #pragma warning restore CS8604 // Possible null reference argument.
 
             // Act and Assert
