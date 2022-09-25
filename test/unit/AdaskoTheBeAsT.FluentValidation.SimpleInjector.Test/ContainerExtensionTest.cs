@@ -31,12 +31,14 @@ namespace AdaskoTheBeAsT.FluentValidation.SimpleInjector.Test
         public void ShouldThrowExceptionWhenNullContainerPassed()
         {
             // Arrange
-            var container = default(Container);
+            const Container? container = null;
 #pragma warning disable CS8604 // Possible null reference argument.
-            Action action = () => ContainerExtension.AddFluentValidation(container, _ => { });
+
+            // ReSharper disable once InvokeAsExtensionMethod
+            Action action = () => ContainerExtension.AddFluentValidation(container!, _ => { });
 #pragma warning restore CS8604 // Possible null reference argument.
 
-            // Act & Assert
+            // Act and Assert
             action.Should().Throw<ArgumentNullException>();
         }
 
