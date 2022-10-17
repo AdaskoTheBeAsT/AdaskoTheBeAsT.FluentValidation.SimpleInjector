@@ -10,7 +10,7 @@
     <RepositoryType>github</RepositoryType>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <Description>FluentValidation extensions for SimpleInjector</Description>
-    <PackageVersion>6.3.1</PackageVersion>
+    <PackageVersion>6.3.2</PackageVersion>
     <Authors>Adam "AdaskoTheBeAsT" Pluciński</Authors>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <IncludeSymbols>true</IncludeSymbols>
@@ -22,7 +22,7 @@
     <Copyright>Adam "AdaskoTheBeAsT" Pluciński</Copyright>
     <PackageTags>FluentValidation;SimpleInjector</PackageTags>
     <PackageReleaseNotes>
-      - upgraded FluentValidation to v11.2.2
+      - upgraded SimpleInjector to v5.4.1
     </PackageReleaseNotes>
   </PropertyGroup>
 
@@ -34,7 +34,7 @@
   <ItemGroup>
     <PackageReference Include="FluentValidation" Version="11.2.2" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
-    <PackageReference Include="SimpleInjector" Version="5.4.0" />
+    <PackageReference Include="SimpleInjector" Version="5.4.1" />
   </ItemGroup>
 
   <ItemGroup>
