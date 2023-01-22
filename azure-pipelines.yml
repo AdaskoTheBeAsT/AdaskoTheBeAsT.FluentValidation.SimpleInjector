@@ -91,7 +91,8 @@ steps:
   - task: ResharperCli@2
     inputs:
       solutionOrProjectPath: "AdaskoTheBeAsT.FluentValidation.SimpleInjector.sln"
-      failBuildLevelSelector: "Error"
+      resharperNuGetVersion: '2022.2.4'
+      failBuildLevelSelector: "Warning"
       resultsOutputFilePath: "$(Build.SourcesDirectory)/CodeQualityResults.xml"
       additionalArguments: "--no-build"
 
