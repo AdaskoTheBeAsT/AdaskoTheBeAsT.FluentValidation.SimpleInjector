@@ -260,9 +260,9 @@ namespace AdaskoTheBeAsT.FluentValidation.SimpleInjector.Test
             // Assert
             using (new AssertionScope())
             {
-                result.Should().HaveCount(1);
+                result.Should().ContainSingle();
                 result[0].Should().BeOfType<PersonValidator>();
-                result2.Should().HaveCount(0);
+                result2.Should().BeEmpty();
             }
         }
     }
