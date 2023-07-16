@@ -40,7 +40,8 @@ steps:
     displayName: Restore
     inputs:
       command: restore
-      arguments: AdaskoTheBeAsT.FluentValidation.SimpleInjector.sln --verbosity quiet
+      verbosityRestore: Quiet
+      arguments: AdaskoTheBeAsT.FluentValidation.SimpleInjector.sln
 
   - task: SonarCloudPrepare@1
     displayName: "Prepare analysis on SonarCloud"
