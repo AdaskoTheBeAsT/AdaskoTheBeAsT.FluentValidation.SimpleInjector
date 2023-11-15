@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netstandard2.1;net6.0;net7.0</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;net6.0;net7.0;net8.0</TargetFrameworks>
     <ProjectGuid>E2EE84CB-4AAA-424C-A8FB-B5904D45AC06</ProjectGuid>
   </PropertyGroup>
 
@@ -10,7 +10,7 @@
     <RepositoryType>github</RepositoryType>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <Description>FluentValidation extensions for SimpleInjector</Description>
-    <PackageVersion>8.2.0</PackageVersion>
+    <PackageVersion>9.0.0</PackageVersion>
     <Authors>Adam "AdaskoTheBeAsT" Pluciński</Authors>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <IncludeSymbols>true</IncludeSymbols>
@@ -22,7 +22,7 @@
     <Copyright>Adam "AdaskoTheBeAsT" Pluciński</Copyright>
     <PackageTags>FluentValidation;SimpleInjector</PackageTags>
     <PackageReleaseNotes>
-      - update FluentValidation 11.6.0
+      - update FluentValidation 11.8.0
     </PackageReleaseNotes>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
@@ -33,7 +33,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentValidation" Version="11.7.1" />
+    <PackageReference Include="FluentValidation" Version="11.8.0" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
     <PackageReference Include="SimpleInjector" Version="5.4.1" />
   </ItemGroup>
