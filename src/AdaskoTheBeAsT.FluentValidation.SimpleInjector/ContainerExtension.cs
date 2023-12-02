@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using FluentValidation;
 using SimpleInjector;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace AdaskoTheBeAsT.FluentValidation.SimpleInjector
 {
@@ -84,10 +85,16 @@ namespace AdaskoTheBeAsT.FluentValidation.SimpleInjector
             this Container container,
             Action<FluentValidationSimpleInjectorConfiguration>? configuration)
         {
+#if NETSTANDARD2_0 || NETSTANDARD2_1
             if (container is null)
             {
                 throw new ArgumentNullException(nameof(container));
             }
+#endif
+
+#if NET6_0_OR_GREATER
+            ArgumentNullException.ThrowIfNull(container);
+#endif
 
             var serviceConfig = new FluentValidationSimpleInjectorConfiguration();
             configuration?.Invoke(serviceConfig);
