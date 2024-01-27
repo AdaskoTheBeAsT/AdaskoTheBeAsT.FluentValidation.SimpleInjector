@@ -4,7 +4,6 @@ using System.Linq;
 using System.Reflection;
 using FluentValidation;
 using SimpleInjector;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace AdaskoTheBeAsT.FluentValidation.SimpleInjector
 {
