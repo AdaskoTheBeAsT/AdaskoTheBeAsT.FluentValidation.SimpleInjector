@@ -7,6 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".props", ".props", "{642CC2
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		.gitignore = .gitignore
+		.runsettings = .runsettings
 		AdaskoTheBeAsT.FluentValidation.SimpleInjector.sln.DotSettings = AdaskoTheBeAsT.FluentValidation.SimpleInjector.sln.DotSettings
 		AdaskoTheBeAsT.ruleset = AdaskoTheBeAsT.ruleset
 		azure-pipelines.yml = azure-pipelines.yml
@@ -34,6 +35,11 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".props", ".props", "{E9F9C3ED-113B-44F9-AF95-F4E1F490044E}"
 	ProjectSection(SolutionItems) = preProject
 		test\Directory.Build.props = test\Directory.Build.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".sarif", ".sarif", "{DED01103-7AAB-4E24-8E6D-FC986E0BB93F}"
+	ProjectSection(SolutionItems) = preProject
+		.sarif\.gitkeep = .sarif\.gitkeep
 	EndProjectSection
 EndProject
 Global
