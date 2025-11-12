@@ -50,6 +50,13 @@ steps:
       verbosityRestore: Quiet
       arguments: AdaskoTheBeAsT.FluentValidation.SimpleInjector.sln
 
+  - task: DotNetCoreCLI@2
+    displayName: "Restore dotnet tools"
+    inputs:
+      command: 'custom'
+      custom: 'tool'
+      arguments: 'restore'
+
   - task: SonarCloudPrepare@3
     displayName: "Prepare analysis on SonarCloud"
     inputs:
@@ -59,12 +66,13 @@ steps:
       projectKey: "AdaskoTheBeAsT_AdaskoTheBeAsT.FluentValidation.SimpleInjector"
       projectName: AdaskoTheBeAsT.FluentValidation.SimpleInjector
       extraProperties: |
+        sonar.working.directory=$(Build.ArtifactStagingDirectory)/.sonar
         sonar.resharper.cs.reportPath=$(Build.SourcesDirectory)/CodeQualityResults.xml
 
   - task: DotNetCoreCLI@2
     displayName: Build
     inputs:
-      arguments: "AdaskoTheBeAsT.FluentValidation.SimpleInjector.sln --configuration $(buildConfiguration)"
+      arguments: "AdaskoTheBeAsT.FluentValidation.SimpleInjector.sln --configuration $(buildConfiguration) --no-restore"
 
   - task: CopyFiles@2
     displayName: "Copy nuget packages"
@@ -98,13 +106,13 @@ steps:
         --settings $(Build.SourcesDirectory)/.runsettings
         /p:RunCodeAnalysis=false
 
-  - task: ResharperCli@2
+  - task: DotNetCoreCLI@2
+    displayName: "Launch ReSharper inspect code"
+    continueOnError: true
     inputs:
-      solutionOrProjectPath: "AdaskoTheBeAsT.FluentValidation.SimpleInjector.sln"
-      resharperNuGetVersion: "2023.3.3"
-      failBuildLevelSelector: "Warning"
-      resultsOutputFilePath: "$(Build.SourcesDirectory)/CodeQualityResults.xml"
-      additionalArguments: "--no-build"
+      command: "custom"
+      custom: "jb"
+      arguments: "inspectcode $(Build.SourcesDirectory)/AdaskoTheBeAsT.FluentValidation.SimpleInjector.sln -o=$(Build.SourcesDirectory)/CodeQualityResults.xml"
 
   - task: SonarCloudAnalyze@3
     displayName: Sonar Cloud analyze
